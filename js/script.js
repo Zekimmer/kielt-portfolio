@@ -102,7 +102,14 @@
       holder.appendChild(next);
 
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => next.classList.add("enter"));
+        requestAnimationFrame(() => {
+          next.classList.add("enter");
+          // Return to a clean base state once settled, so a future "leave"
+          // isn't overridden by a lingering "enter" class still on this
+          // element (same CSS specificity + later source order would
+          // otherwise let "enter" win the cascade and block the fade-out).
+          setTimeout(() => next.classList.remove("enter-init", "enter"), 650);
+        });
       });
 
       setTimeout(() => current.remove(), 600);
