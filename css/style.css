@@ -412,7 +412,25 @@ ul { list-style: none; }
 /* =========================================================================
    ABOUT
    ========================================================================= */
-.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+.about-grid { display: grid; grid-template-columns: 240px 1.1fr 0.9fr; gap: 48px; align-items: center; }
+
+.about-photo { position: relative; width: 100%; max-width: 240px; }
+.about-photo-glow {
+  position: absolute; inset: -34px; border-radius: 50%;
+  background: var(--grad-main); filter: blur(54px); opacity: 0.45; z-index: 0;
+  animation: float3 20s ease-in-out infinite;
+}
+.about-photo-frame {
+  position: relative; z-index: 1; padding: 5px; border-radius: 28px;
+  background: var(--grad-main); box-shadow: 0 25px 60px -20px rgba(124, 58, 237, 0.55);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.about-photo-frame:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 30px 70px -18px rgba(236, 72, 153, 0.6); }
+.about-photo-frame img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center;
+  border-radius: 23px; display: block; background: var(--bg-elev-2);
+}
+
 .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .skills span {
   font-size: 0.85rem; font-weight: 500; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border);
@@ -527,6 +545,7 @@ ul { list-style: none; }
    ========================================================================= */
 @media (max-width: 980px) {
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { max-width: 200px; margin: 0 auto; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .modal-dialog { flex-direction: column; max-height: 92vh; overflow-y: auto; }
   .modal-side { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
