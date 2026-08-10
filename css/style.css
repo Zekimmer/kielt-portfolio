@@ -193,12 +193,22 @@ ul { list-style: none; }
 .rotator-word {
   background: var(--grad-main); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; color: transparent;
   animation: gradientShift 6s ease infinite; grid-area: 1 / 1; white-space: nowrap;
+  transform: translateY(0); backface-visibility: hidden;
 }
 @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-.rotator-word.leave { animation: none; opacity: 0; transform: translateY(-14px); transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
-.rotator-word.enter-init { opacity: 0; transform: translateY(14px); }
-.rotator-word.enter { opacity: 1; transform: translateY(0); transition: opacity 0.4s var(--ease) 0.05s, transform 0.4s var(--ease) 0.05s; }
+/* Full-height "roll up" swap — leave and enter travel a whole line-height so the
+   outgoing and incoming word occupy disjoint rows of the clipped box and never
+   overlap the same pixels (avoids ghosting from the transparent gradient fill). */
+.rotator-word.leave {
+  animation: none; opacity: 0; transform: translateY(-100%);
+  transition: transform 0.55s var(--ease), opacity 0.4s ease-in;
+}
+.rotator-word.enter-init { opacity: 0; transform: translateY(100%); }
+.rotator-word.enter {
+  opacity: 1; transform: translateY(0);
+  transition: transform 0.55s var(--ease), opacity 0.4s ease-out 0.08s;
+}
 
 .hero-subtitle { font-size: 1.1rem; color: var(--text-dim); max-width: 640px; margin: 0 auto 38px; }
 

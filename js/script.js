@@ -105,7 +105,7 @@
         requestAnimationFrame(() => next.classList.add("enter"));
       });
 
-      setTimeout(() => current.remove(), 420);
+      setTimeout(() => current.remove(), 600);
     }, 3200);
   }
 
