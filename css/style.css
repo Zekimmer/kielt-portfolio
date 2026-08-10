@@ -191,11 +191,16 @@ ul { list-style: none; }
 }
 .rotator { position: relative; display: inline-grid; vertical-align: bottom; overflow: hidden; height: 1.1em; }
 .rotator-word {
-  background: var(--grad-main); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: gradientShift 6s ease infinite; grid-area: 1 / 1; white-space: nowrap;
+  /* Static gradient position (not animated) — each word only lives on
+     screen for ~3.2s, shorter than a shift cycle would need, so animating
+     this per-word made the same word render a different, non-deterministic
+     color mix every time it appeared. A fixed position keeps it consistent
+     with the gradient text used elsewhere on the site (logo, buttons). */
+  background: var(--grad-main); background-size: 200% 200%; background-position: 0% 50%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  grid-area: 1 / 1; white-space: nowrap;
   transform: translateY(0); backface-visibility: hidden;
 }
-@keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
 /* Full-height "roll up" swap — leave and enter travel a whole line-height so the
    outgoing and incoming word occupy disjoint rows of the clipped box and never
