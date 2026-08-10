@@ -1,4 +1,4 @@
-# Kielt — Portfolio Website
+# ZekCreates — Portfolio Website (Ezekiel Tolentino)
 
 A dark, animated, single-page portfolio for **Web Design / Web Apps**, **Email Marketing Design**, and **Automation Workflows**. Pure HTML/CSS/JS — no build step, no framework, no server required. Free to host on Netlify (recommended), GitHub Pages, or Vercel.
 

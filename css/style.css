@@ -431,6 +431,16 @@ ul { list-style: none; }
   border-radius: 23px; display: block; background: var(--bg-elev-2);
 }
 
+.credentials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.credentials span {
+  display: inline-flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 600;
+  padding: 8px 15px 8px 12px; border-radius: 999px; color: var(--text);
+  border: 1px solid rgba(6, 182, 212, 0.35); background: rgba(6, 182, 212, 0.08);
+  transition: all 0.25s var(--ease);
+}
+.credentials span svg { color: var(--accent-3); flex-shrink: 0; width: 14px; height: 14px; }
+.credentials span:hover { border-color: rgba(6, 182, 212, 0.6); background: rgba(6, 182, 212, 0.14); transform: translateY(-2px); }
+
 .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .skills span {
   font-size: 0.85rem; font-weight: 500; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border);

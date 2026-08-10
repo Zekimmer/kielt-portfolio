@@ -37,6 +37,13 @@
 
     document.title = `${cfg.brand} — Web, Email & Automation Design Portfolio`;
 
+    // Logo wordmark (nav + footer) — logoAccent renders in the gradient,
+    // the rest of `brand` renders in plain text right after it.
+    const accent = cfg.logoAccent;
+    const rest = cfg.brand.slice(accent.length);
+    document.querySelectorAll(".brand-mark").forEach((n) => (n.textContent = accent));
+    document.querySelectorAll(".brand-name").forEach((n) => (n.textContent = rest));
+
     // Hero title (prefix + rotator + suffix), built from config so it stays
     // in sync even if you only edit config.js.
     const heroTitle = document.querySelector(".hero-title");
@@ -57,6 +64,14 @@
       box.innerHTML = `<span class="stat-value" data-target="${s.value}" data-suffix="${s.suffix || ""}">0${s.suffix || ""}</span><span class="stat-label">${s.label}</span>`;
       statsGrid.appendChild(box);
     });
+
+    // Credentials (certifications) — small badge row, hidden if empty
+    const credentialsList = document.getElementById("credentialsList");
+    (cfg.credentials || []).forEach((c) => {
+      const badge = el("span", null, `${ICONS.check} ${c}`);
+      credentialsList.appendChild(badge);
+    });
+    if (!cfg.credentials || !cfg.credentials.length) credentialsList.style.display = "none";
 
     // Skills
     const skillsList = document.getElementById("skillsList");

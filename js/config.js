@@ -16,8 +16,12 @@
    ========================================================================= */
 
 const SITE_CONFIG = {
-  brand: "Kielt",
-  brandTag: "K.",
+  brand: "ZekCreates",
+  // Colored portion of the logo wordmark (nav + footer) — the rest of
+  // `brand` renders in plain white right after it. Must be a prefix of
+  // `brand`, e.g. "Zek" + "Creates" = "ZekCreates".
+  logoAccent: "Zek",
+  fullName: "Ezekiel Tolentino",
   email: "kielt@yahoo.com",
   location: "Available worldwide · Remote",
 
@@ -28,6 +32,10 @@ const SITE_CONFIG = {
   heroTitleSuffix: "that get results.",
   heroSubtitle:
     "Freelance designer & developer crafting conversion-focused websites and pixel-perfect email marketing campaigns — now leveling up into workflow automation.",
+
+  // Shown as small badges under the About bio. Leave the array empty to
+  // hide the row entirely.
+  credentials: ["Certified Data Science Associate", "Certified Data Science Professional"],
 
   // Shown in the About section as animated counters. Edit freely.
   stats: [
