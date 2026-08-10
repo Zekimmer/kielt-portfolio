@@ -62,13 +62,13 @@ const SITE_CONFIG = {
 
 const WEB_PROJECTS = [
   {
-    title: "Project Name One",
-    description: "Short one-line description of what this site/app does and the problem it solves.",
-    thumbnail: "assets/web/web-1.svg",
-    url: "https://example.com",
-    github: "https://github.com/yourusername/project-one",
+    title: "OMNHS Canteen Web System",
+    description: "Role-based ordering & POS system for a school canteen — students/teachers order ahead, canteen staff manage fulfillment and daily sales, admins manage menus and accounts. Demo logins: Student 308100-00001 / Evangelista308100-00001!, Staff EMP-001 / HernandezEMP-001!, SuperAdmin superadmin / superadmin123! (data resets periodically — it's a live demo, not production).",
+    thumbnail: "assets/web/canteen-thumb.png",
+    url: "https://websystem-final-project-szjx.onrender.com/login",
+    github: "https://github.com/Zekimmer/WebSystem-Final-Project",
     category: "Web App",
-    tags: ["React", "Tailwind CSS"]
+    tags: ["Laravel", "PHP", "SQLite"]
   },
   {
     title: "Project Name Two",
