@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0b0b"/>
+      <stop offset="100%" stop-color="#7c1d1d"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="#ffffff"/>
+  <rect width="600" height="80" fill="#111111"/>
+  <text x="300" y="47" fill="#ffffff" font-size="22" font-weight="700" letter-spacing="2" text-anchor="middle">YOUR BRAND</text>
+  <rect y="80" width="600" height="280" fill="url(#hero)"/>
+  <text x="300" y="240" fill="#ffffff" font-size="42" font-weight="800" text-anchor="middle">BLACK FRIDAY</text>
+  <text x="300" y="285" fill="#f59e0b" font-size="24" font-weight="700" text-anchor="middle">UP TO 60% OFF SITEWIDE</text>
+  <rect width="600" height="360" fill="url(#fade)"/>
+</svg>

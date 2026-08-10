@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kielt — Web, Email &amp; Automation Design Portfolio</title>
+<meta name="description" content="Kielt designs conversion-focused websites, web apps, and email marketing campaigns — now building into workflow automation.">
+
+<!-- Social preview -->
+<meta property="og:title" content="Kielt — Design Portfolio">
+<meta property="og:description" content="Web Design, Web Apps, Email Marketing Design &amp; Automation Workflows.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NOISE / GRAIN OVERLAY ============ -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ CURSOR GLOW (desktop only) ============ -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="brand-mark">K.</span><span class="brand-name">ielt</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#work" data-nav>Web</a>
+      <a href="#email" data-nav>Email</a>
+      <a href="#automation" data-nav>Automation</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#contact" data-nav class="nav-cta">Let's Talk</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <canvas id="particles"></canvas>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal-up">Design &amp; Development Portfolio</p>
+    <h1 class="hero-title reveal-up" style="--d:0.05s">
+      I design <span class="rotator" id="rotator"><span class="rotator-word">Web Experiences</span></span>
+      <br>that get results.
+    </h1>
+    <p class="hero-subtitle reveal-up" style="--d:0.15s" id="heroSubtitle">
+      Freelance designer &amp; developer crafting conversion-focused websites and pixel-perfect email marketing campaigns — now leveling up into workflow automation.
+    </p>
+    <div class="hero-actions reveal-up" style="--d:0.25s">
+      <a href="#work" class="btn btn-primary">
+        <span>View My Work</span>
+      </a>
+      <a href="#contact" class="btn btn-ghost">
+        <span>Get In Touch</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="#work" class="scroll-cue" aria-label="Scroll down">
+    <span class="scroll-cue-dot"></span>
+  </a>
+</section>
+
+<main>
+
+<!-- ============ WEB / WEB APPS ============ -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <p class="section-kicker">01 · Development</p>
+      <h2 class="section-title">Web Designs &amp; Web Apps</h2>
+      <p class="section-desc">Hand-picked sites and applications — click any thumbnail to view it live, or jump to the source on GitHub.</p>
+    </div>
+
+    <div class="filters" id="webFilters" role="tablist" aria-label="Filter web projects"></div>
+
+    <div class="grid grid-web" id="webGrid"></div>
+  </div>
+</section>
+
+<!-- ============ EMAIL MARKETING DESIGNS ============ -->
+<section class="section section-alt" id="email">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <p class="section-kicker">02 · Email Marketing</p>
+      <h2 class="section-title">Email Designs</h2>
+      <p class="section-desc">Every email is built at true send width — <strong>600px wide</strong>. Click any card to open the full design in a scrollable preview, exactly as a subscriber would see it.</p>
+    </div>
+
+    <div class="filters" id="emailFilters" role="tablist" aria-label="Filter email projects"></div>
+
+    <div class="grid grid-email" id="emailGrid"></div>
+  </div>
+</section>
+
+<!-- ============ AUTOMATION WORKFLOWS ============ -->
+<section class="section" id="automation">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <p class="section-kicker">03 · Automation</p>
+      <h2 class="section-title">Automation Workflows</h2>
+      <p class="section-desc">Connecting tools like Zapier, Make, and n8n to remove repetitive work from client businesses.</p>
+    </div>
+
+    <div class="grid grid-automation" id="automationGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section-alt" id="about">
+  <div class="container about-grid">
+    <div class="about-copy reveal-up">
+      <p class="section-kicker">04 · About</p>
+      <h2 class="section-title">A little about me</h2>
+      <p class="section-desc">
+        I'm Kielt — a freelance designer &amp; front-end developer focused on two things: making brands look sharp online, and making their marketing emails actually get opened and clicked. I'm currently deep in learning automation tooling so I can help clients connect the dots between their site, their inbox, and everything in between.
+      </p>
+      <div class="skills" id="skillsList"></div>
+    </div>
+
+    <div class="stats-grid" id="statsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy reveal-up">
+        <p class="section-kicker">05 · Contact</p>
+        <h2 class="section-title">Let's build something<br>worth talking about.</h2>
+        <p class="section-desc">Have a project in mind — a new site, a launch campaign, or an inbox full of manual busywork? Tell me about it.</p>
+
+        <a href="mailto:kielt@yahoo.com" class="contact-email" id="contactEmailLink">
+          <span>kielt@yahoo.com</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <div class="social-row" id="socialRow"></div>
+      </div>
+
+      <form class="contact-form reveal-up" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="cf-project">Project type</label>
+          <select id="cf-project" name="project-type">
+            <option>Web Design / Web App</option>
+            <option>Email Marketing Design</option>
+            <option>Automation Workflow</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="contactSubmit">
+          <span>Send Message</span>
+        </button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="nav-brand">
+      <span class="brand-mark">K.</span><span class="brand-name">ielt</span>
+    </a>
+    <p class="footer-note">Designed &amp; built by Kielt · <span id="footerYear"></span></p>
+    <div class="social-row" id="socialRowFooter"></div>
+  </div>
+</footer>
+
+<!-- ============ EMAIL LIGHTBOX MODAL ============ -->
+<div class="modal" id="emailModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-side">
+      <button class="modal-close" data-close aria-label="Close preview">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <p class="modal-kicker">Email Design Preview</p>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-client" id="modalClient"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-tags" id="modalTags"></div>
+      <p class="modal-hint">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M12 19L6 13M12 19L18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scroll inside the frame to see the full email
+      </p>
+    </div>
+
+    <div class="modal-frame-wrap">
+      <div class="email-frame">
+        <div class="email-frame-bar">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="email-frame-title">600px wide</span>
+        </div>
+        <div class="email-frame-scroll" id="modalScroll">
+          <img id="modalImage" src="" alt="">
+          <iframe id="modalIframe" src="" title="Email HTML preview" style="display:none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

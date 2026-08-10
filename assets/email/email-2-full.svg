@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1200" viewBox="0 0 600 1200" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="hero2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="btn2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffe4f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="1200" fill="#fff8fb"/>
+  <rect width="600" height="70" fill="#ffffff"/>
+  <text x="300" y="42" fill="#ec4899" font-size="20" font-weight="800" letter-spacing="2" text-anchor="middle">BLOOM &amp; CO.</text>
+  <rect y="70" width="600" height="380" fill="url(#hero2)"/>
+  <text x="300" y="240" fill="#ffffff" font-size="38" font-weight="800" text-anchor="middle">SPRING INTO SAVINGS</text>
+  <text x="300" y="280" fill="#ffffff" font-size="18" opacity="0.9" text-anchor="middle">New arrivals, fresh colors, 30% off</text>
+  <rect x="215" y="320" width="170" height="46" rx="23" fill="url(#btn2)"/>
+  <text x="300" y="349" fill="#a855f7" font-size="15" font-weight="700" text-anchor="middle">EXPLORE NOW</text>
+  <text x="300" y="500" fill="#2a2a2a" font-size="20" font-weight="700" text-anchor="middle">Curated Just For You</text>
+  <g>
+    <rect x="30" y="540" width="255" height="180" rx="10" fill="#f6e6f0"/>
+    <text x="157" y="745" fill="#2a2a2a" font-size="14" font-weight="600" text-anchor="middle">Signature Bundle</text>
+    <text x="157" y="765" fill="#ec4899" font-size="14" font-weight="700" text-anchor="middle">$64.00</text>
+
+    <rect x="315" y="540" width="255" height="180" rx="10" fill="#eee3fb"/>
+    <text x="442" y="745" fill="#2a2a2a" font-size="14" font-weight="600" text-anchor="middle">Limited Edition Set</text>
+    <text x="442" y="765" fill="#a855f7" font-size="14" font-weight="700" text-anchor="middle">$88.00</text>
+  </g>
+  <rect y="820" width="600" height="200" fill="#f6e6f0"/>
+  <text x="300" y="900" fill="#a855f7" font-size="22" font-weight="800" text-anchor="middle">REFER A FRIEND, GET $10</text>
+  <text x="300" y="930" fill="#555555" font-size="13" text-anchor="middle">Share the love and you both save</text>
+  <rect x="230" y="955" width="140" height="42" rx="21" fill="#ec4899"/>
+  <text x="300" y="981" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">GIVE $10</text>
+  <rect y="1050" width="600" height="150" fill="#2a2a2a"/>
+  <text x="300" y="1095" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">BLOOM &amp; CO.</text>
+  <text x="300" y="1118" fill="#999999" font-size="11" text-anchor="middle">Unsubscribe · Preferences</text>
+  <text x="300" y="1170" fill="#f59e0b" font-size="10" letter-spacing="1" text-anchor="middle">REPLACE THIS FILE WITH YOUR EMAIL DESIGN · 600 × H PX</text>
+</svg>

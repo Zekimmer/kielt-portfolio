@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1400" viewBox="0 0 600 1400" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0b0b"/>
+      <stop offset="100%" stop-color="#7c1d1d"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="1400" fill="#ffffff"/>
+  <!-- header -->
+  <rect width="600" height="80" fill="#111111"/>
+  <text x="300" y="47" fill="#ffffff" font-size="22" font-weight="700" letter-spacing="2" text-anchor="middle">YOUR BRAND</text>
+  <!-- hero -->
+  <rect y="80" width="600" height="420" fill="url(#hero)"/>
+  <text x="300" y="270" fill="#ffffff" font-size="42" font-weight="800" text-anchor="middle">BLACK FRIDAY</text>
+  <text x="300" y="315" fill="#f59e0b" font-size="24" font-weight="700" text-anchor="middle">UP TO 60% OFF SITEWIDE</text>
+  <rect x="220" y="360" width="160" height="46" rx="23" fill="url(#btn)"/>
+  <text x="300" y="389" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">SHOP NOW</text>
+  <!-- intro copy -->
+  <text x="300" y="560" fill="#111111" font-size="20" font-weight="700" text-anchor="middle">The Biggest Sale of the Year</text>
+  <text x="300" y="588" fill="#666666" font-size="14" text-anchor="middle">Don't miss out — deals end at midnight.</text>
+  <!-- product grid -->
+  <g>
+    <rect x="30" y="630" width="165" height="165" rx="8" fill="#f3f3f3"/>
+    <rect x="30" y="630" width="165" height="120" rx="8" fill="#e5e5e5"/>
+    <text x="112" y="770" fill="#111111" font-size="13" font-weight="600" text-anchor="middle">Product One</text>
+    <text x="112" y="788" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">$29.00</text>
+
+    <rect x="217" y="630" width="165" height="165" rx="8" fill="#f3f3f3"/>
+    <rect x="217" y="630" width="165" height="120" rx="8" fill="#e5e5e5"/>
+    <text x="299" y="770" fill="#111111" font-size="13" font-weight="600" text-anchor="middle">Product Two</text>
+    <text x="299" y="788" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">$49.00</text>
+
+    <rect x="404" y="630" width="165" height="165" rx="8" fill="#f3f3f3"/>
+    <rect x="404" y="630" width="165" height="120" rx="8" fill="#e5e5e5"/>
+    <text x="486" y="770" fill="#111111" font-size="13" font-weight="600" text-anchor="middle">Product Three</text>
+    <text x="486" y="788" fill="#ef4444" font-size="13" font-weight="700" text-anchor="middle">$19.00</text>
+  </g>
+  <!-- secondary banner -->
+  <rect y="850" width="600" height="220" fill="#1a0b0b"/>
+  <text x="300" y="945" fill="#ffffff" font-size="26" font-weight="800" text-anchor="middle">FREE SHIPPING</text>
+  <text x="300" y="975" fill="#cccccc" font-size="14" text-anchor="middle">On all orders over $50, today only</text>
+  <rect x="230" y="1005" width="140" height="42" rx="21" fill="url(#btn)"/>
+  <text x="300" y="1031" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">LEARN MORE</text>
+  <!-- testimonial -->
+  <text x="300" y="1140" fill="#111111" font-size="16" font-style="italic" text-anchor="middle">"Best quality I've found online — will order again!"</text>
+  <text x="300" y="1165" fill="#999999" font-size="12" text-anchor="middle">— Verified Customer ★★★★★</text>
+  <!-- footer -->
+  <rect y="1230" width="600" height="170" fill="#111111"/>
+  <text x="300" y="1275" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">YOUR BRAND</text>
+  <text x="300" y="1300" fill="#888888" font-size="11" text-anchor="middle">123 Market Street, Your City</text>
+  <text x="300" y="1320" fill="#888888" font-size="11" text-anchor="middle">Unsubscribe · Preferences · Contact Us</text>
+  <circle cx="260" cy="1355" r="12" fill="#333333"/>
+  <circle cx="300" cy="1355" r="12" fill="#333333"/>
+  <circle cx="340" cy="1355" r="12" fill="#333333"/>
+  <text x="300" y="1390" fill="#f59e0b" font-size="10" letter-spacing="1" text-anchor="middle">REPLACE THIS FILE WITH YOUR EMAIL DESIGN · 600 × H PX</text>
+</svg>
