@@ -93,6 +93,15 @@
     const holder = document.getElementById("rotator");
     let i = 0;
 
+    // The container auto-sizes to its widest child. While the outgoing and
+    // incoming words briefly coexist in the DOM, that would hold the box at
+    // the wider word's width for the whole transition, then snap down the
+    // instant the old word is removed -- a jarring "stuck on the old
+    // word's alignment, then jumps" effect. Pinning an explicit pixel width
+    // up front and animating *that* (via the CSS `transition: width` on
+    // .rotator) replaces the snap with a smooth glide instead.
+    holder.style.width = holder.querySelector(".rotator-word").offsetWidth + "px";
+
     setInterval(() => {
       const current = holder.querySelector(".rotator-word");
       i = (i + 1) % cfg.rotatingWords.length;
@@ -100,6 +109,7 @@
       const next = el("span", "rotator-word enter-init", cfg.rotatingWords[i]);
       current.classList.add("leave");
       holder.appendChild(next);
+      holder.style.width = next.offsetWidth + "px";
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {

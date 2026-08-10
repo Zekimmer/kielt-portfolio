@@ -189,7 +189,13 @@ ul { list-style: none; }
 .hero-title {
   font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.08; font-weight: 700; margin-bottom: 22px; color: var(--text);
 }
-.rotator { position: relative; display: inline-grid; vertical-align: bottom; overflow: hidden; height: 1.1em; }
+.rotator {
+  position: relative; display: inline-grid; vertical-align: bottom; overflow: hidden; height: 1.1em;
+  /* Width is set to an explicit pixel value by script.js (see initRotator) so
+     it can glide between word widths instead of holding the old word's width
+     for the whole transition and snapping down once it's removed. */
+  transition: width 0.5s var(--ease);
+}
 .rotator-word {
   /* Static gradient position (not animated) — each word only lives on
      screen for ~3.2s, shorter than a shift cycle would need, so animating
@@ -199,6 +205,13 @@ ul { list-style: none; }
   background: var(--grad-main); background-size: 200% 200%; background-position: 0% 50%;
   -webkit-background-clip: text; background-clip: text; color: transparent;
   grid-area: 1 / 1; white-space: nowrap;
+  /* Without this, the grid item stretches to fill the (briefly wider,
+     mid-transition) cell, and text-align:center inherited from .hero-content
+     then centers the word's text inside that stretched box -- producing a
+     visible gap before the word until the cell finishes shrinking. Pinning
+     each word to the start of its cell keeps it flush-left regardless of
+     the container's current width. */
+  justify-self: start; text-align: left;
   transform: translateY(0); backface-visibility: hidden;
 }
 
