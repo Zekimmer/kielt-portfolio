@@ -71,9 +71,11 @@ const SITE_CONFIG = {
 const WEB_PROJECTS = [
   {
     title: "OMNHS Canteen Web System",
-    description: "Role-based ordering & POS system for a school canteen — students/teachers order ahead, canteen staff manage fulfillment and daily sales, admins manage menus and accounts. Demo logins: Student 308100-00001 / Evangelista308100-00001!, Staff EMP-001 / HernandezEMP-001!, SuperAdmin superadmin / superadmin123! (data resets periodically — it's a live demo, not production).",
+    description: "Role-based ordering and POS system for a school canteen. Explore the instant case study, then try the complete live application with demo accounts.",
     thumbnail: "assets/web/canteen-thumb.png",
-    url: "https://websystem-final-project-szjx.onrender.com/login",
+    url: "projects/omnhs/",
+    linkLabel: "Case Study",
+    liveUrl: "https://websystem-final-project-szjx.onrender.com/login",
     github: "https://github.com/Zekimmer/WebSystem-Final-Project",
     category: "Web App",
     tags: ["Laravel", "PHP", "SQLite"]

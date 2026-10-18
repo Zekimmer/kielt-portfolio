@@ -183,7 +183,7 @@
   function createWebCard(project) {
     const card = el("article", "card-web");
     card.innerHTML = `
-      <a class="card-thumb" href="${project.url}" target="_blank" rel="noopener" aria-label="Open ${project.title} live site">
+      <a class="card-thumb" href="${project.url}" aria-label="View ${project.title} project">
         <img src="${project.thumbnail}" alt="${project.title} screenshot" loading="lazy">
         <span class="card-visit">${ICONS.arrow}</span>
       </a>
@@ -193,7 +193,8 @@
         <p class="card-desc">${project.description}</p>
         <div class="card-tags">${(project.tags || []).map((t) => `<span class="tag">${t}</span>`).join("")}</div>
         <div class="card-links">
-          <a class="card-link" href="${project.url}" target="_blank" rel="noopener">${ICONS.external} Live Site</a>
+          <a class="card-link" href="${project.url}">${ICONS.external} ${project.linkLabel || "Live Site"}</a>
+          ${project.liveUrl ? `<a class="card-link" href="${project.liveUrl}" target="_blank" rel="noopener">${ICONS.external} Live Demo</a>` : ""}
           ${project.github ? `<a class="card-link" href="${project.github}" target="_blank" rel="noopener">${ICONS.github} Code</a>` : ""}
         </div>
       </div>`;

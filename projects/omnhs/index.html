@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMNHS Canteen Web System — ZekCreates</title>
+  <meta name="description" content="Case study for the OMNHS role-based canteen ordering, point-of-sale, inventory, and administration system.">
+  <meta property="og:title" content="OMNHS Canteen Web System">
+  <meta property="og:description" content="A role-based school canteen platform built with Laravel and PHP.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17131a;
+      --muted: #6e6872;
+      --paper: #f7f3ed;
+      --card: #fffdf9;
+      --line: #ded7ce;
+      --maroon: #7d0d18;
+      --maroon-dark: #560811;
+      --gold: #e7ab43;
+      --green: #1e704a;
+      --shadow: 0 24px 70px rgba(67, 32, 22, .13);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: "DM Sans", sans-serif; line-height: 1.6;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle at 8% 4%, rgba(231,171,67,.17), transparent 26%), radial-gradient(circle at 94% 17%, rgba(125,13,24,.09), transparent 27%);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { padding: 22px 0; }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font: 700 1.2rem "Space Grotesk", sans-serif; letter-spacing: -.03em; }
+    .brand span { color: var(--maroon); }
+    .back { color: var(--muted); font-size: .92rem; font-weight: 600; }
+    .back:hover { color: var(--maroon); }
+    .hero { padding: 58px 0 70px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--maroon); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .13em; }
+    .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--gold); }
+    h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.08; letter-spacing: -.045em; }
+    h1 { max-width: 900px; margin: 22px 0 20px; font-size: clamp(3rem, 7vw, 6.6rem); }
+    .lede { max-width: 735px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.28rem); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-weight: 700; transition: .2s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 9px 25px rgba(67,32,22,.12); }
+    .button.primary { color: white; background: var(--maroon); border-color: var(--maroon); }
+    .button.primary:hover { background: var(--maroon-dark); }
+    .warm { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .84rem; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(231,171,67,.55); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(231,171,67,0); } 100% { box-shadow: 0 0 0 0 rgba(231,171,67,0); } }
+    .preview { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: #e8e5e2; box-shadow: var(--shadow); }
+    .browser { display: flex; gap: 7px; padding: 13px 17px; background: var(--card); border-bottom: 1px solid var(--line); }
+    .browser i { width: 10px; height: 10px; border-radius: 50%; background: #d8d0c8; }
+    .browser i:first-child { background: #d9665a; } .browser i:nth-child(2) { background: #e7ab43; } .browser i:nth-child(3) { background: #65a66e; }
+    .preview img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); margin: 72px 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: rgba(255,253,249,.72); }
+    .fact { min-height: 130px; padding: 25px; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact small { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; font-weight: 700; }
+    .fact strong { display: block; margin-top: 10px; font: 600 1.07rem "Space Grotesk", sans-serif; }
+    .section { padding: 70px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: start; }
+    h2 { margin: 8px 0 0; font-size: clamp(2.2rem, 5vw, 4.2rem); }
+    .section-copy { margin: 4px 0 0; color: var(--muted); font-size: 1.08rem; }
+    .roles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 42px; }
+    .role { min-height: 250px; padding: 25px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+    .role-no { color: var(--maroon); font: 700 .78rem "Space Grotesk", sans-serif; letter-spacing: .1em; }
+    .role h3 { margin: 52px 0 12px; font-size: 1.45rem; }
+    .role p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 42px; }
+    .flow-step { position: relative; padding: 22px 16px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); font-weight: 700; text-align: center; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -11px; top: 50%; z-index: 2; width: 21px; height: 21px; margin-top: -11px; color: var(--maroon); background: var(--paper); }
+    .demo { margin: 70px 0; padding: clamp(28px, 6vw, 64px); color: white; border-radius: 28px; background: linear-gradient(135deg, var(--maroon-dark), var(--maroon)); box-shadow: var(--shadow); }
+    .demo-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 55px; align-items: center; }
+    .demo h2 { margin-top: 10px; }
+    .demo p { color: rgba(255,255,255,.76); }
+    .credentials { display: grid; gap: 10px; }
+    .credential { padding: 16px 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: rgba(255,255,255,.07); }
+    .credential strong { display: block; margin-bottom: 4px; }
+    .credential code { color: #ffe1a9; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .85rem; overflow-wrap: anywhere; }
+    .note { margin-top: 12px; font-size: .78rem; color: rgba(255,255,255,.62) !important; }
+    footer { padding: 32px 0 44px; color: var(--muted); font-size: .88rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 860px) {
+      .facts, .roles { grid-template-columns: repeat(2, 1fr); }
+      .fact:nth-child(2) { border-right: 0; } .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .section-head, .demo-grid { grid-template-columns: 1fr; gap: 24px; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step:not(:last-child)::after { content: "↓"; right: auto; top: auto; bottom: -15px; left: 50%; margin: 0 0 0 -10px; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: min(calc(100% - 28px), 1180px); }
+      .hero { padding-top: 36px; }
+      h1 { font-size: 2.85rem; overflow-wrap: anywhere; }
+      .facts, .roles { grid-template-columns: 1fr; }
+      .fact { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:nth-child(3) { border-bottom: 1px solid var(--line); }
+      footer .wrap { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pulse { animation: none; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="../../"><span>Zek</span>Creates</a>
+      <a class="back" href="../../#work">← Back to portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Full-stack web application</span>
+        <h1>A faster lunch line starts before the bell rings.</h1>
+        <p class="lede">OMNHS Canteen is a role-based ordering and operations system that connects students, teachers, canteen staff, and administrators in one workflow.</p>
+        <div class="actions">
+          <a class="button primary" href="https://websystem-final-project-szjx.onrender.com/login" target="_blank" rel="noopener">Open live OMNHS system ↗</a>
+          <a class="button" href="https://github.com/Zekimmer/WebSystem-Final-Project" target="_blank" rel="noopener">View source code</a>
+          <span class="warm"><span class="pulse"></span>Live demo is warming in the background</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <figure class="preview">
+        <div class="browser" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="../../assets/web/canteen-thumb.png" alt="OMNHS student ordering portal showing the Monday menu">
+      </figure>
+
+      <div class="facts" aria-label="Project overview">
+        <div class="fact"><small>My role</small><strong>Full-stack developer</strong></div>
+        <div class="fact"><small>Platform</small><strong>Responsive web app</strong></div>
+        <div class="fact"><small>Core stack</small><strong>Laravel · PHP · SQL</strong></div>
+        <div class="fact"><small>Focus</small><strong>Ordering and operations</strong></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">The system</span><h2>One platform, four focused experiences.</h2></div>
+          <p class="section-copy">Each account sees only the tools needed for its role. Customers order ahead, staff move orders through fulfillment, and administrators manage the data behind daily canteen operations.</p>
+        </div>
+        <div class="roles">
+          <article class="role"><span class="role-no">01</span><h3>Students</h3><p>Browse the day’s menu, build an order, choose a pickup time, and follow its status.</p></article>
+          <article class="role"><span class="role-no">02</span><h3>Teachers</h3><p>Use the same advance-ordering flow with a dedicated authenticated account.</p></article>
+          <article class="role"><span class="role-no">03</span><h3>Canteen staff</h3><p>Run POS checkout, manage the queue, confirm payments, update stock, and review sales.</p></article>
+          <article class="role"><span class="role-no">04</span><h3>Super admin</h3><p>Manage people, accounts, canteens, system settings, and activity records.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Order lifecycle</span><h2>Clear status from order to pickup.</h2></div>
+          <p class="section-copy">The workflow gives customers visibility while providing staff with an actionable queue. Stock is checked when payment is confirmed, and every order stays tied to its selected canteen.</p>
+        </div>
+        <div class="flow" aria-label="Order lifecycle">
+          <div class="flow-step">Draft</div><div class="flow-step">Pending</div><div class="flow-step">Preparing</div><div class="flow-step">Ready</div><div class="flow-step">Completed</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap demo" id="demo">
+      <div class="demo-grid">
+        <div>
+          <span class="eyebrow" style="color:#ffe1a9">Try the real application</span>
+          <h2>Explore each role in the live demo.</h2>
+          <p>The free demo server may need a short moment to wake after inactivity. This case study starts warming it as soon as the page opens.</p>
+          <div class="actions"><a class="button" href="https://websystem-final-project-szjx.onrender.com/login" target="_blank" rel="noopener">Open live system ↗</a></div>
+        </div>
+        <div class="credentials">
+          <div class="credential"><strong>Student</strong><code>308100-00001 / Evangelista308100-00001!</code></div>
+          <div class="credential"><strong>Staff</strong><code>EMP-001 / HernandezEMP-001!</code></div>
+          <div class="credential"><strong>Super admin</strong><code>superadmin / superadmin123!</code></div>
+          <p class="note">Demo data may reset periodically. These accounts contain sample data only.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>Designed and developed by Ezekiel Tolentino.</span><a href="mailto:kielt@yahoo.com">kielt@yahoo.com</a></div></footer>
+
+  <script>
+    // Wake the free Render service while visitors read the instant case study.
+    fetch("https://websystem-final-project-szjx.onrender.com/login", { mode: "no-cors", cache: "no-store" }).catch(() => {});
+  </script>
+</body>
+</html>
